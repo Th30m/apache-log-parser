@@ -7,7 +7,7 @@ import json
 with open("./access.log", "r") as file_pointer:
   lines = file_pointer.readlines()
 
-log_regex = r"^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - - \[.+\] \"[^\"]+\" (\d{3}) \d+ \"\-\" \"(\w+[a-zA-Z0-9_])"
+log_regex = r"^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - - \[.+\] \"[^\"]+\" (\d{3}) \d+"
 
 access_data = []
 for line in lines:
@@ -16,7 +16,6 @@ for line in lines:
 
 ip_list = [ip for ip, status_code in access_data]
 
-#print(ip_list)
 
 ip_count = {}
 
@@ -25,7 +24,6 @@ for ip in ip_list:
     ip_count[ip] = 1
   else:
     ip_count[ip] += 1
-#print(ip_count)
 
 final_data = {}
 
