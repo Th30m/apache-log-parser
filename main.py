@@ -4,8 +4,16 @@ import json
 
 
 
-with open("./access.log", "r") as file_pointer:
+with open("./access.log", "r") as file_pointer:     #here, you choose the file's path 
   lines = file_pointer.readlines()
+
+
+#for REGEX you can use : r"^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - - \[.+\] \"[^\"]+\" (\d{3}) \d+ \"\-\" \"(\w+[a-zA-Z0-9_])" 
+#but the json.dump doesn't work => Out of range. 
+
+#(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) = IP address
+#(\d{3}) = return code
+#(\w+[a-zA-Z0-9_]) = web browser
 
 log_regex = r"^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - - \[.+\] \"[^\"]+\" (\d{3}) \d+"
 
