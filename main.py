@@ -38,7 +38,7 @@ final_data = {}
 for ip, status_code in access_data:
   final_data[ip] = {}
 
-print(final_data)
+#print(final_data)
 
 for ip, status_code in access_data:
   if status_code not in final_data[ip]:
